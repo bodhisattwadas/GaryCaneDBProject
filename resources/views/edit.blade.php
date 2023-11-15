@@ -52,7 +52,7 @@ Edit Database configuration
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Database PASSWORD</label>
-                        <input type="text" name="database_password" placeholder="database_password" class="form-control" value="{{ $database_storage->database_password }}">
+                        <input type="password" name="database_password" placeholder="database_password" class="form-control" value="{{ $database_storage->database_password }}">
                     </div>
                 </div>
             </div>
@@ -65,6 +65,7 @@ Edit Database configuration
                         <select name="database_backup_interval" class="form-control">
                             <option value="6" {{ $database_storage->database_backup_interval == 6 ? 'selected' : '' }}>6 Hours</option>
                             <option value="12" {{ $database_storage->database_backup_interval == 12 ? 'selected' : '' }}>12 Hours</option>
+                            <option value="18" {{ $database_storage->database_backup_interval == 18 ? 'selected' : '' }}>18 Hours</option>
                             <option value="24" {{ $database_storage->database_backup_interval == 24 ? 'selected' : '' }}>24 Hours</option>
                         </select>
                 </div>

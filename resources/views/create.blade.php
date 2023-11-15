@@ -49,7 +49,7 @@ Add Database configuration
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="database_password">Database PASSWORD</label>
-                        <input type="text" name="database_password" placeholder="database_password" class="form-control">
+                        <input type="password" name="database_password" placeholder="database_password" class="form-control">
                     </div>
                 </div>
             </div>
@@ -61,6 +61,7 @@ Add Database configuration
                         <select name="database_backup_interval" class="form-control">
                             <option value="6">6 Hours</option>
                             <option value="12">12 Hours</option>
+                            <option value="18">18 Hours</option>
                             <option value="24" selected>24 Hours</option>
                         </select>
                     </div>
