@@ -29,3 +29,7 @@ Route::resource('database_storage', 'App\Http\Controllers\DatabaseStorageControl
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
