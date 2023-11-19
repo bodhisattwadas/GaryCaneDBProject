@@ -25,28 +25,30 @@ class BackupController extends Controller
     //backup_now
     public function backup_now(Request $request)
     {
-        //validate
-        // $request->validate([
-        //     'database_name' => 'required',
-        //     'database_username' => 'required',
-        //     'database_password' => 'required',
-        //     'database_host' => 'required',
-        //     // 'database_tag' => 'required',
-        //     // 'database_description' => 'required',
-        // ]);
 
-        //backup the database as SQL script and store it in public path
-        $backup_file = public_path('backups/' . $request->database_name . '.sql');
-        $command = "mysqldump --user={$request->database_username} --password={$request->database_password} --host={$request->database_host} {$request->database_name} > {$backup_file}";
-        $return_var = NULL;
-        $output = NULL;
-        exec($command, $output, $return_var);
-
-        //redirect
-        return back()->with('data',[
-            'status' => 'success',
-            'message' => 'Backup successful'
-        ]);
+        try{
+            //backup the database as SQL script and store it in public path
+            $file_name = $request->database_name . '-' . date('Y-m-d-H-i-s') . '.sql';
+            $backup_file = public_path('backups/' . $file_name);
+            $command = "mysqldump --user={$request->database_username} --password={$request->database_password} --host={$request->database_host} {$request->database_name} > {$backup_file}";
+            $return_var = NULL;
+            $output = NULL;
+            exec($command, $output, $return_var);
+            //Log $return_var
+            \Log::info($return_var);
+            \Log::info($output);
+            //redirect
+            return back()->with('data',[
+                'status' => 'success',
+                'message' => 'Backup successful'
+            ]);
+        }catch(\Exception $e){
+            return back()->with('data',[
+                'status' => 'error',
+                'message' => 'Backup failed: ' . $e->getMessage()
+            ]);
+        }
+        
     }
 
 }
