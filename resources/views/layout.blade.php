@@ -11,10 +11,10 @@
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
     <title>@yield('page-title')</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="/adminLTE//plugins/images/favicon.png">
-    <link href="/adminLTE//plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/adminLTE//plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
-    <link href="/adminLTE//css/style.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="/adminLTE/plugins/images/favicon.png">
+    <link href="/adminLTE/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/adminLTE/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="/adminLTE/css/style.min.css" rel="stylesheet">
     <style>
         /** make all button fonts capital*/
         .btn {
@@ -51,13 +51,13 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="/adminLTE//plugins/images/logo-icon.png" alt="homepage" />
+                            <img src="/adminLTE/plugins/images/logo-icon.png" alt="homepage" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="/adminLTE//plugins/images/logo-text.png" alt="homepage" />
+                            <img src="/adminLTE/plugins/images/logo-text.png" alt="homepage" />
                         </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
@@ -68,8 +68,8 @@
 
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="/adminLTE//plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                <img src="/adminLTE/plugins/images/users/d3.jpg" alt="user-img" width="36"
+                                    class="img-circle"><span class="text-white font-medium">ADMIN</span></a>
                         </li>
                     </ul>
                 </div>
@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('profile.index')  }}"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Profile</span>
@@ -106,10 +106,21 @@
                         </li>
                         
                         
-                        <li class="text-center p-20 upgrade-btn">
+                        {{-- <li class="text-center p-20 upgrade-btn">
                             <a href="https://www.wrappixel.com/templates/ampleadmin/"
                                 class="btn d-grid btn-danger text-white" target="_blank">
                                Logout</a>
+                        </li> --}}
+                        <li class="text-center p-20 upgrade-btn">
+                            <a class="btn d-grid btn-danger text-white" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                            </form>
                         </li>
                     </ul>
 
@@ -129,24 +140,24 @@
         
     </div>
     
-    <script src="/adminLTE//plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/adminLTE/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     
 
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="/adminLTE//bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/adminLTE//js/app-style-switcher.js"></script>
-    <script src="/adminLTE//plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="/adminLTE/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/adminLTE/js/app-style-switcher.js"></script>
+    <script src="/adminLTE/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
-    <script src="/adminLTE//js/waves.js"></script>
+    <script src="/adminLTE/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="/adminLTE//js/sidebarmenu.js"></script>
+    <script src="/adminLTE/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="/adminLTE//js/custom.js"></script>
+    <script src="/adminLTE/js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="/adminLTE//plugins/bower_components/chartist/dist/chartist.min.js"></script>
-    <script src="/adminLTE//plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="/adminLTE//js/pages/dashboards/dashboard1.js"></script>
+    <script src="/adminLTE/plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="/adminLTE/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="/adminLTE/js/pages/dashboards/dashboard1.js"></script>
 </body>
 
 </html>

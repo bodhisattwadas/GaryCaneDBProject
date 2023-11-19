@@ -14,7 +14,9 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    <link href="adminLTE/css/app-041e359a.css" rel="stylesheet">
+    <script src="adminLTE/js/app-3d89afc5.js"></script>
 </head>
 <body>
     <div id="app">

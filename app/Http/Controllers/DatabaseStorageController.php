@@ -121,4 +121,5 @@ class DatabaseStorageController extends Controller
         return redirect()->route('database_storage.index');
 
     }
+    
 }
