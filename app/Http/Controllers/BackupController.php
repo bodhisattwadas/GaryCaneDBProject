@@ -110,8 +110,6 @@ class BackupController extends Controller
     // }
 
     public function _cronBackup(){
-        $backupNumber = env('BACKUP_NUMBER', 5);
-        
         //Get list of all databases
         $database_storages = \DB::select('SELECT ds.*
         FROM database_storages ds
@@ -125,7 +123,7 @@ class BackupController extends Controller
         ) AS bm_cron ON ds.id = bm_cron.database_id
         WHERE bm.database_id IS NULL OR bm_cron.database_id IS NOT NULL
         ORDER BY bm_cron.next_backup_at ASC
-        LIMIT ?;', [$backupNumber]);   
+        LIMIT ?;', env('BACKUP_NUMBER', 5));   
         //Iterate through each database and backup
 
         foreach($database_storages as $database_storage){
