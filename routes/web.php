@@ -30,7 +30,7 @@ Route::resource('backup_controller', 'App\Http\Controllers\BackupController')->m
 Route::post('/backup_controller/test_connection', 'App\Http\Controllers\BackupController@test_connection')->name('test_connection')->middleware('auth');
 //backup_controller.backup_now route
 Route::post('/backup_controller/backup_now', 'App\Http\Controllers\BackupController@backup_now')->name('backup_now')->middleware('auth');
-Route::get('/cronBackup', 'App\Http\Controllers\BackupController@_cronBackup')->name('cronBackup');
+// Route::get('/cronBackup', 'App\Http\Controllers\BackupController@_cronBackup')->name('cronBackup');
 //backup_history
 Route::get('/backup_history/{database_id}', 'App\Http\Controllers\BackupController@backup_history')->name('backup_history')->middleware('auth');
 //backup_history_all
