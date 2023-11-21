@@ -49,9 +49,8 @@ class DatabaseStorageController extends Controller
             'database_host' => $request->database_host,
             'database_tag' => $request->database_tag,
             'database_description' => $request->database_description,
-            //backup interval
             'database_backup_interval' => $request->database_backup_interval,
-            'database_backup_interval_count' => $this->_getIntervalCount($request),
+            // 'database_backup_interval_count' => $this->_getIntervalCount($request),
         ]);
 
         //redirect
@@ -103,7 +102,6 @@ class DatabaseStorageController extends Controller
             'database_tag' => $request->database_tag,
             'database_description' => $request->database_description,
             'database_backup_interval' => $request->database_backup_interval,
-            'database_backup_interval_count' => $this->_getIntervalCount($request),
         ]);
 
         //redirect

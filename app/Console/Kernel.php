@@ -13,6 +13,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        //run BackupController@_cronBackup every 2 minutes
+        $schedule->call('App\Http\Controllers\BackupController@_cronBackup');
     }
 
     /**

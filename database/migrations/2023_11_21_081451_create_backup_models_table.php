@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('database_id');
             $table->string('file_path');
             $table->string('backup_mode');
+            $table->dateTime('next_backup_at')->nullable();
             $table->timestamps();
         });
     }

@@ -12,5 +12,6 @@ class BackupModel extends Model
         'database_id',
         'file_path',
         'backup_mode',
+        'next_backup_at'
     ];
 }
