@@ -21,10 +21,50 @@ Backup History
         } );
     } );
 </script>
-<style>
-    
-
-</style>
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-12">
+        <div class="white-box analytics-info">
+            <h3 class="box-title">Total Backups</h3>
+            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                <li>
+                    <div id="sparklinedash"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                </li>
+                <li class="ms-auto"><span class="counter text-success">
+                    {{-- count total backups --}}
+                   {{ $backups->count()  }}
+                </span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <div class="white-box analytics-info">
+            <h3 class="box-title">Total Manual Backup</h3>
+            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                <li>
+                    <div id="sparklinedash2"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                </li>
+                <li class="ms-auto"><span class="counter text-purple">
+                    {{-- count backup_mode == Manual --}}
+                    {{ $backups->where('backup_mode', 'manual')->count() }}
+                </span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <div class="white-box analytics-info">
+            <h3 class="box-title">Cron Backup</h3>
+            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                <li>
+                    <div id="sparklinedash3"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                </li>
+                <li class="ms-auto"><span class="counter text-info">
+                    {{ $backups->where('backup_mode', 'cron')->count() }}
+                </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div class="card">
     
     <div class="card-header bg-info">
@@ -56,7 +96,7 @@ Backup History
                     @endphp
                     <td>
                         <div class="text-danger text-uppercase" style="font-size: 12px;"><b>DB : {{ $database->database_name }}</b></div>
-                        <div class="text-success text-uppercase" style="font-size: 10px;">HOST : {{ $database->database_host }}</div>
+                        <div class="text-info text-uppercase" style="font-size: 10px;">HOST : {{ $database->database_host }}</div>
                     </td>
                     {{-- <td  style="font-size: 12px;">{{ $backup->created_at }}</td> --}}
                     {{-- Change date format --}}
