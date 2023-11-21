@@ -17,12 +17,9 @@ return new class extends Migration
             $table->string('database_username');
             $table->string('database_password');
             $table->string('database_host');
-            // $table->string('database_port');
             $table->string('database_tag')->nullable();
             $table->string('database_description')->nullable();
-            //interval in number and three values are there 6,12,24
             $table->integer('database_backup_interval')->default(24)->unsigned();
-            // $table->integer('database_backup_interval_count')->default(1)->unsigned();
             $table->timestamps();
             
         });
