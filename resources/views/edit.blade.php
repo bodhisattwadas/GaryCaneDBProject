@@ -64,8 +64,8 @@ Edit Database configuration
                         <label for="database_backup_interval">Backup Interval</label>
                         <select name="database_backup_interval" class="form-control">
                             <option value="6" {{ $database_storage->database_backup_interval == 6 ? 'selected' : '' }}>6 Hours</option>
+                            <option value="8" {{ $database_storage->database_backup_interval == 8 ? 'selected' : '' }}>8 Hours</option>
                             <option value="12" {{ $database_storage->database_backup_interval == 12 ? 'selected' : '' }}>12 Hours</option>
-                            <option value="18" {{ $database_storage->database_backup_interval == 18 ? 'selected' : '' }}>18 Hours</option>
                             <option value="24" {{ $database_storage->database_backup_interval == 24 ? 'selected' : '' }}>24 Hours</option>
                         </select>
                 </div>

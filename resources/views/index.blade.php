@@ -4,10 +4,45 @@ Home
 @endsection
 
 @section('main')
+{{-- jQuery CDN --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{-- DataTables CDN --}}
+<script>
+    
+    $(document).ready(function() {
+        $('#mTable').DataTable( {
+            "columnDefs": [ {
+                "targets": -1,
+                "orderable": false
+            },
+            {
+                "targets": -2,
+                "orderable": false
+            },
+            {
+                "targets": -3,
+                "orderable": false
+            } ]
+        } );
+    } );
+</script>
+<style>
+    /**Change stripe color*/
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgb(223, 230, 233);
+    }
+    /** Lower height of cell*/
+    .table td, .table th {
+        padding: .3rem;
+    }
+    /**Lower font size*/
+    .table td, .table th {
+        font-size: 12px;
+    }
+
+</style>
 <div class="row">
     <div class="col-md-6">
-        {{-- <a class="btn btn-primary" href="{{ route('database_storage.create') }}"> Add database</a> --}}
-        
         <a class="btn btn-primary" href="{{ route('database_storage.create') }}"><i class="fa fa-plus"></i> Add
             database</a>
     </div>
@@ -22,7 +57,7 @@ Home
     </div>
     <div class="card-body">
         {{-- Table to list all rows of databasestoragecontroller --}}
-        <table class="table table-bordered" id="mTable">
+        <table id="mTable" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th>#</th>
@@ -50,8 +85,8 @@ Home
                     {{-- <td>{{ $database->id }}</td> --}}
                     {{-- count --}}
                     <td>{{ $count++ }}</td>
-                    <td>{{ $database->database_host }}</td>
-                    <td>{{ $database->database_name }}</td>
+                    <td>{{ Str::upper($database->database_host) }}</td>
+                    <td>{{ Str::upper($database->database_name) }}</td>
                     <td>{{ $database->database_username }}</td>
                     {{-- <td>{{ $database->database_password }}</td> --}}
                     <td>{{ $database->database_tag }}</td>

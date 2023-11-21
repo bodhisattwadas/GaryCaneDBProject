@@ -40,7 +40,7 @@ class DatabaseStorageController extends Controller
             // 'database_tag' => 'required',
             // 'database_description' => 'required',
         ]);
-
+       
         //store
         DatabaseStorage::create([
             'database_name' => $request->database_name,
@@ -51,6 +51,7 @@ class DatabaseStorageController extends Controller
             'database_description' => $request->database_description,
             //backup interval
             'database_backup_interval' => $request->database_backup_interval,
+            'database_backup_interval_count' => $this->_getIntervalCount($request),
         ]);
 
         //redirect
@@ -91,8 +92,6 @@ class DatabaseStorageController extends Controller
             'database_username' => 'required',
             'database_password' => 'required',
             'database_host' => 'required',
-            // 'database_tag' => 'required',
-            // 'database_description' => 'required',
         ]);
 
         //update
@@ -104,6 +103,7 @@ class DatabaseStorageController extends Controller
             'database_tag' => $request->database_tag,
             'database_description' => $request->database_description,
             'database_backup_interval' => $request->database_backup_interval,
+            'database_backup_interval_count' => $this->_getIntervalCount($request),
         ]);
 
         //redirect
@@ -120,6 +120,19 @@ class DatabaseStorageController extends Controller
         $databaseStorage->delete();
         return redirect()->route('database_storage.index');
 
+    }
+    private function _getIntervalCount(Request $request){
+        $database_backup_interval_count = 1;
+        if($request->database_backup_interval == 24){
+            $database_backup_interval_count = 1;
+        }elseif($request->database_backup_interval == 12){
+            $database_backup_interval_count = 2;
+        }elseif($request->database_backup_interval == 8){
+            $database_backup_interval_count = 3;
+        }elseif($request->database_backup_interval == 6){
+            $database_backup_interval_count = 4;
+        }
+        return $database_backup_interval_count;
     }
     
 }

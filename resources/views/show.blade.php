@@ -20,6 +20,31 @@ Database
                     {{ session()->get('data')['message'] }}
                 </div>
 @endif
+<div class="container m-2">
+    {{-- test connection button --}}
+    <form action="{{ route('test_connection', $database_storage->id) }}" method="POST" style="display: inline-block;">
+        @csrf
+        {{-- error --}}
+        <input type="hidden" name="database_id" value="{{ $database_storage->id }}">
+        <input type="hidden" name="database_name" value="{{ $database_storage->database_name }}">
+        <input type="hidden" name="database_host" value="{{ $database_storage->database_host }}">
+        <input type="hidden" name="database_username" value="{{ $database_storage->database_username }}">
+        <input type="hidden" name="database_password" value="{{ $database_storage->database_password }}">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Test Connection</button>
+    </form>
+    {{-- backup now form --}}
+    <form action="{{ route('backup_now', $database_storage->id) }}" method="POST" style="display: inline-block;">
+        @csrf
+        {{-- error --}}
+        <input type="hidden" name="database_id" value="{{ $database_storage->id }}">
+        <input type="hidden" name="database_name" value="{{ $database_storage->database_name }}">
+        <input type="hidden" name="database_host" value="{{ $database_storage->database_host }}">
+        <input type="hidden" name="database_username" value="{{ $database_storage->database_username }}">
+        <input type="hidden" name="database_password" value="{{ $database_storage->database_password }}">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Backup Now</button>
+    </form>
+    <a class="btn btn-primary" href="{{ route('backup_history', $database_storage->id) }}"><i class="fa fa-edit"></i> Backup History</a>
+</div>
 <div class="card">
     <div class="card-header bg-info">
         Database: <b>{{ $database_storage->database_name }}</b> [HOST : <b>{{ $database_storage->database_host }}</b>]
@@ -47,34 +72,7 @@ Database
         
         <br>
         <br>
-        {{-- test connection button --}}
-        <form action="{{ route('test_connection', $database_storage->id) }}" method="POST" style="display: inline-block;">
-            @csrf
-            {{-- error --}}
-            <input type="hidden" name="database_id" value="{{ $database_storage->id }}">
-            <input type="hidden" name="database_name" value="{{ $database_storage->database_name }}">
-            <input type="hidden" name="database_host" value="{{ $database_storage->database_host }}">
-            <input type="hidden" name="database_username" value="{{ $database_storage->database_username }}">
-            <input type="hidden" name="database_password" value="{{ $database_storage->database_password }}">
-            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Test Connection</button>
-        </form>
-        {{-- <a href="{{ route('database_storage.test_connection', $database_storage->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Test Connection</a> --}}
-        {{-- delete button --}}
         
-        {{-- backup now button --}}
-        {{-- <a href="{{ route('backup_now', $database_storage->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Backup Now</a> --}}
-        {{-- restore button --}}
-        {{-- ?backup now form --}}
-        <form action="{{ route('backup_now', $database_storage->id) }}" method="POST" style="display: inline-block;">
-            @csrf
-            {{-- error --}}
-            <input type="hidden" name="database_id" value="{{ $database_storage->id }}">
-            <input type="hidden" name="database_name" value="{{ $database_storage->database_name }}">
-            <input type="hidden" name="database_host" value="{{ $database_storage->database_host }}">
-            <input type="hidden" name="database_username" value="{{ $database_storage->database_username }}">
-            <input type="hidden" name="database_password" value="{{ $database_storage->database_password }}">
-            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Backup Now</button>
-        </form>
     </div>
     
 </div>

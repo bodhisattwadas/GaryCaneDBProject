@@ -16,5 +16,6 @@ class DatabaseStorage extends Model
         'database_tag',
         'database_description',
         'database_backup_interval',
+        'database_backup_interval_count',
     ];
 }

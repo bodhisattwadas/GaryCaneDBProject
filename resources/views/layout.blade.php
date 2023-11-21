@@ -5,20 +5,38 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
+    {{-- <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework"> --}}
     <meta name="robots" content="noindex,nofollow">
     <title>@yield('page-title')</title>
     <link rel="icon" type="image/png" sizes="16x16" href="/adminLTE/plugins/images/favicon.png">
     <link href="/adminLTE/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/adminLTE/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <link href="/adminLTE/css/style.min.css" rel="stylesheet">
+    {{-- <link href="/adminLTE/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <link href="/adminLTE/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
     <style>
         /** make all button fonts capital*/
         .btn {
          text-transform: uppercase !important; 
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgb(223, 230, 233);
+        }
+            /** Lower height of cell*/
+            .table td, .table th {
+            padding: .3rem;
+        }
+            /**Center table cells*/
+            .table td, .table th {
+            text-align: center;
+        }
+            /**Center table header*/
+            .table thead tr th {
+            text-align: center;
         }
     </style>
 </head>
@@ -104,6 +122,13 @@
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('backup_history_all')  }}"
+                                aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Backup History</span>
+                            </a>
+                        </li>
                         
                         
                         {{-- <li class="text-center p-20 upgrade-btn">
@@ -158,6 +183,9 @@
     <script src="/adminLTE/plugins/bower_components/chartist/dist/chartist.min.js"></script>
     <script src="/adminLTE/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="/adminLTE/js/pages/dashboards/dashboard1.js"></script>
+    <script src="/adminLTE/js/jquery.dataTables.min.js"></script>
+    <script src="/adminLTE/js/dataTables.bootstrap5.min.js"></script>
+
 </body>
 
 </html>

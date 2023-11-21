@@ -30,21 +30,25 @@ Route::resource('backup_controller', 'App\Http\Controllers\BackupController')->m
 Route::post('/backup_controller/test_connection', 'App\Http\Controllers\BackupController@test_connection')->name('test_connection')->middleware('auth');
 //backup_controller.backup_now route
 Route::post('/backup_controller/backup_now', 'App\Http\Controllers\BackupController@backup_now')->name('backup_now')->middleware('auth');
-
-
+Route::get('/cronBackup', 'App\Http\Controllers\BackupController@_cronBackup')->name('cronBackup');
+//backup_history
+Route::get('/backup_history/{database_id}', 'App\Http\Controllers\BackupController@backup_history')->name('backup_history')->middleware('auth');
+//backup_history_all
+Route::get('/backup_history_all', 'App\Http\Controllers\BackupController@backup_history_all')->name('backup_history_all')->middleware('auth');
+//download_backup
+Route::get('/download_backup/{backup_id}', 'App\Http\Controllers\BackupController@download_backup')->name('download_backup')->middleware('auth');
 
 //Profile routes
-Route::resource('profile', 'App\Http\Controllers\ProfileController')
-        ->only(['index', 'update'])->middleware('auth');
+Route::resource('profile', 'App\Http\Controllers\ProfileController')->only(['index', 'update'])->middleware('auth');
 
 
 Auth::routes();
 //bLOCK REGISTER ROUTE
-Route::get('/register', function () {
-    return redirect('/login');
-});
+// Route::get('/register', function () {
+//     return redirect('/login');
+// });
 Auth::routes([
-    'register' => false, // Registration Routes...
+    'register' => true, // Registration Routes...
     'reset' => false, // Password Reset Routes...
     'verify' => false, // Email Verification Routes...
   ]);

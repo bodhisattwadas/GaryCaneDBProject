@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('database_description')->nullable();
             //interval in number and three values are there 6,12,24
             $table->integer('database_backup_interval')->default(24)->unsigned();
+            $table->integer('database_backup_interval_count')->default(1)->unsigned();
             $table->timestamps();
         });
     }

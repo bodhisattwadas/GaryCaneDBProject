@@ -60,8 +60,8 @@ Add Database configuration
                         <label for="database_backup_interval">Backup Interval</label>
                         <select name="database_backup_interval" class="form-control">
                             <option value="6">6 Hours</option>
+                            <option value="8">8 Hours</option>
                             <option value="12">12 Hours</option>
-                            <option value="18">18 Hours</option>
                             <option value="24" selected>24 Hours</option>
                         </select>
                     </div>
