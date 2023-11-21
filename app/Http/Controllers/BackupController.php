@@ -38,7 +38,8 @@ class BackupController extends Controller
             $conn = new \PDO("mysql:host=$database_host;dbname=$database_name", $database_user, $database_pass);
             $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             //Change mysqldump path after server migration
-            $command = "C:\\xampp\\mysql\\bin\\mysqldump.exe -h $database_host -u $database_user -p$database_pass $database_name > $file_path";
+            //GET MYSQLDUMP PATH FROM ENV
+            $command = env('MYSQLDUMP_PATH')." -h $database_host -u $database_user -p$database_pass $database_name > $file_path";
             \Log::info($command);
             exec($command);
             \App\Models\BackupModel::create([
@@ -89,7 +90,7 @@ class BackupController extends Controller
                     $conn = new \PDO("mysql:host=$database_host;dbname=$database_name", $database_user, $database_pass);
                     $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
                     //Change mysqldump path after server migration
-                    $command = "C:\\xampp\\mysql\\bin\\mysqldump.exe -h $database_host -u $database_user -p$database_pass $database_name > $file_path";
+                    $command = env('MYSQLDUMP_PATH')." -h $database_host -u $database_user -p$database_pass $database_name > $file_path";
                     \Log::info($command);
                     exec($command);
                     //store backup in database
