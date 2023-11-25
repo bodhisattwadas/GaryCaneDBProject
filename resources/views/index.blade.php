@@ -67,6 +67,7 @@ Home
                     {{-- <th>PASSWORD</th> --}}
                     <th>TAG</th>
                     <th>DESCRIPTION</th>
+                    <th>BACKUP FREQUENCY</th>
                     {{-- <th>Added On</th>
                     <th>Updated On</th> --}}
                     <th></th>
@@ -91,6 +92,8 @@ Home
                     {{-- <td>{{ $database->database_password }}</td> --}}
                     <td>{{ $database->database_tag }}</td>
                     <td>{{ $database->database_description }}</td>
+                    <td>In every <b>{{ $database->database_backup_interval }} HOURS</b></td>
+                    {{-- <td>{{ $database->created_at }}</td>
                     {{-- show resource --}}
                     <td>
                         <div><a href="{{ route('database_storage.show', $database->id) }}" class="btn btn-success"><i

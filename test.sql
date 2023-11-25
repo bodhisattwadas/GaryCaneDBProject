@@ -177,3 +177,203 @@ INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4')
 INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
 
 
+-- Repeat the above block for each subsequent database (Database14 to Database100)
+-- Just replace "Database13" with the respective database name in each block
+-- and replace the values in the INSERT statements with the respective values
+
+-- Create Database14
+CREATE DATABASE IF NOT EXISTS Database14;
+USE Database14;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database15
+CREATE DATABASE IF NOT EXISTS Database15;
+USE Database15;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database16
+CREATE DATABASE IF NOT EXISTS Database16;
+USE Database16;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database17
+CREATE DATABASE IF NOT EXISTS Database17;
+USE Database17;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database18
+CREATE DATABASE IF NOT EXISTS Database18;
+USE Database18;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database19
+CREATE DATABASE IF NOT EXISTS Database19;
+USE Database19;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database20
+CREATE DATABASE IF NOT EXISTS Database20;
+USE Database20;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database21
+CREATE DATABASE IF NOT EXISTS Database21;
+USE Database21;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+ 
+ -- Create Database22
+CREATE DATABASE IF NOT EXISTS Database22;
+USE Database22;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database23
+CREATE DATABASE IF NOT EXISTS Database23;
+USE Database23;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database24
+CREATE DATABASE IF NOT EXISTS Database24;
+USE Database24;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database25
+CREATE DATABASE IF NOT EXISTS Database25;
+USE Database25;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database26
+CREATE DATABASE IF NOT EXISTS Database26;
+USE Database26;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database27
+CREATE DATABASE IF NOT EXISTS Database27;
+USE Database27;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database28
+CREATE DATABASE IF NOT EXISTS Database28;
+USE Database28;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database29
+CREATE DATABASE IF NOT EXISTS Database29;
+USE Database29;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database30
+CREATE DATABASE IF NOT EXISTS Database30;
+USE Database30;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+-- Create Database31
+CREATE DATABASE IF NOT EXISTS Database31;
+USE Database31;
+CREATE TABLE Table1 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table2 (ID INT PRIMARY KEY, Data VARCHAR(255));
+CREATE TABLE Table3 (ID INT PRIMARY KEY, Data VARCHAR(255));
+INSERT INTO Table1 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table2 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+INSERT INTO Table3 VALUES (1, 'Data1'), (2, 'Data2'), (3, 'Data3'), (4, 'Data4');
+
+
+
+
+
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database1', 'root', 'irishhngf', 'localhost', NULL, NULL, '24', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database2', 'root', 'irishhngf', 'localhost', NULL, NULL, '6', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database3', 'root', 'irishhngf', 'localhost', NULL, NULL, '12', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database4', 'root', 'irishhngf', 'localhost', NULL, NULL, '1', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database5', 'root', 'irishhngf', 'localhost', NULL, NULL, '24', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database6', 'root', 'irishhngf', 'localhost', NULL, NULL, '12', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database7', 'root', 'irishhngf', 'localhost', NULL, NULL, '12', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database8', 'root', 'irishhngf', 'localhost', NULL, NULL, '12', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database9', 'root', 'irishhngf', 'localhost', NULL, NULL, '6', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database1', 'root', 'irishhngf', 'localhost', NULL, NULL, '1', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database10', 'root', 'irishhngf', 'localhost', NULL, NULL, '1', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
+INSERT INTO `database_storages` (`id`, `database_name`, `database_username`, `database_password`, `database_host`, `database_tag`, `database_description`, `database_backup_interval`, `created_at`, `updated_at`) VALUES (NULL, 'database12', 'root', 'irishhngf', 'localhost', NULL, NULL, '1', '2023-11-25 11:20:38', '2023-11-25 11:20:38');
