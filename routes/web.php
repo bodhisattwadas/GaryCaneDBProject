@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatabaseStorageController;
 // index route
 Route::get('/', function () {
-    return view('welcome');
-});
+    return (new DatabaseStorageController)->index();
+})->middleware('auth');
 //Home route
 Route::get('/home', function () {
     return (new DatabaseStorageController)->index();
