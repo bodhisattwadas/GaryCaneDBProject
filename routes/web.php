@@ -44,9 +44,9 @@ Route::resource('profile', 'App\Http\Controllers\ProfileController')->only(['ind
 
 Auth::routes();
 //bLOCK REGISTER ROUTE
-// Route::get('/register', function () {
-//     return redirect('/login');
-// });
+Route::get('/register', function () {
+    return redirect('/login');
+});
 Auth::routes([
     'register' => false, // Registration Routes...
     'reset' => false, // Password Reset Routes...
