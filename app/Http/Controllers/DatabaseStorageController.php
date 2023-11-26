@@ -115,6 +115,8 @@ class DatabaseStorageController extends Controller
         //
         //delete resource
         $databaseStorage->delete();
+        //delete backups
+        \App\Models\BackupModel::where('database_id', $databaseStorage->id)->delete();
         return redirect()->route('database_storage.index');
 
     }

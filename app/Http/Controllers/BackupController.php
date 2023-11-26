@@ -130,7 +130,13 @@ class BackupController extends Controller
     }
     //backup_history_all
     public function backup_history_all(){
+        //Onbly the backups which exists in storage table
         $backups = \App\Models\BackupModel::all();
+        //select only those whole database_id exists in database_storages table
+        $backups = $backups->filter(function($backup){
+            return \App\Models\DatabaseStorage::where('id', $backup->database_id)->exists();
+        });
+        
         return view('backup_history', [
             'backups' => $backups
         ]);
