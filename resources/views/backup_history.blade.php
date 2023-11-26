@@ -79,6 +79,7 @@ Backup History
                     <th>Database</th>
                     <th>Backup time</th>
                     <th>Backup Type</th>
+                    {{-- <th>Size</th> --}}
                     <td></td>
                 </tr>
             </thead>
@@ -93,6 +94,8 @@ Backup History
                     <td   style="font-size: 12px;">{{ $count++ }}</td>
                     @php
                     $database = \App\Models\DatabaseStorage::find($backup->database_id);
+                    // $filePath = $backup->backup_path;
+                    // $fileSize = filesize($filePath);
                     @endphp
                     <td>
                         <div class="text-danger text-uppercase" style="font-size: 12px;"><b>DB : {{ $database->database_name }}</b></div>
@@ -102,6 +105,8 @@ Backup History
                     {{-- Change date format --}}
                     <td  style="font-size: 12px;">{{ date('d-m-Y H:i:s a', strtotime($backup->created_at)) }}</td>
                     <td  style="font-size: 12px;">{{ Str::upper($backup->backup_mode) }}</td>
+                    
+                    {{-- <td>{{ $fileSize }}</td> --}}
                     {{-- No sort --}}
                     <td >
                         <a href="{{ route('download_backup', $backup->id) }}" class="btn btn-info btn-sm"><i class="fa fa-download"></i> Download</a>
