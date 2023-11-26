@@ -88,7 +88,9 @@ class BackupController extends Controller
             $database_backup_interval = $database_storage->database_backup_interval;
 
             $file_name = $database_name.'_backup_'.date('Y-m-d_H-i-s').'.sql';
-            $dir_name = 'backups';
+            // $dir_name = '/home/mpx2m5m5epo2/public_html/backups';
+            $dir_name = env('FILE_STORE_PATH','backups');
+            //$save_path = 'backups';
             $file_path = $dir_name.'/'.$file_name;
             
             //GET MYSQLDUMP PATH FROM ENV
