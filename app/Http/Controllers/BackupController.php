@@ -111,6 +111,7 @@ class BackupController extends Controller
                     'backup_mode' => 'cron',
                     'next_backup_at' => date('Y-m-d H:i:s', strtotime('+'.$database_backup_interval.' hour'))
                 ]);
+                \Log::debug($database_name." Database backed up successfully to the backups folder at : ".date('Y-m-d H:i:s'));
             }catch(\PDOException $e){
                 \Log::info($e->getMessage());
             }
