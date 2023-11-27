@@ -67,7 +67,6 @@ class BackupController extends Controller
         //Get list of all databases
         $database_storages = \DB::select('SELECT ds.*
         FROM database_storages ds
-        --LEFT JOIN backup_models bm ON ds.id = bm.database_id
         LEFT JOIN (
             SELECT database_id, next_backup_at
             FROM backup_models
@@ -75,7 +74,6 @@ class BackupController extends Controller
             AND next_backup_at <= CURRENT_TIMESTAMP
             AND next_backup_at IS NOT NULL
         ) AS bm_cron ON ds.id = bm_cron.database_id
-        --WHERE bm.database_id IS NULL OR bm_cron.database_id IS NOT NULL
         WHERE bm_cron.database_id IS NOT NULL
         ORDER BY bm_cron.next_backup_at ASC
         LIMIT ?;', [env('BACKUP_NUMBER', 5)]);   
