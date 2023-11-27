@@ -40,7 +40,7 @@ class BackupController extends Controller
             $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             //Change mysqldump path after server migration
             //GET MYSQLDUMP PATH FROM ENV
-            $command = env('MYSQLDUMP_PATH')." -h $database_host -u $database_user -p$database_pass $database_name > $file_path";
+            $command = env('MYSQLDUMP_PATH')." -h $database_host -u $database_user -p$database_pass $database_name -P 3306 > $file_path";
             \Log::info($command);
             exec($command);
             \App\Models\BackupModel::create([
