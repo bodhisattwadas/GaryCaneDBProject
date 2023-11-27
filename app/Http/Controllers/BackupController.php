@@ -10,7 +10,7 @@ class BackupController extends Controller
     public function test_connection(Request $request)
     {
         try{
-            $connection = @mysqli_connect($request->database_host, $request->database_username, $request->database_password, $request->database_name);
+            $connection = mysqli_connect($request->database_host, $request->database_username, $request->database_password, $request->database_name);
             
             return back()->with('data',[
                 'status' => 'success',
@@ -40,7 +40,7 @@ class BackupController extends Controller
             $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             //Change mysqldump path after server migration
             //GET MYSQLDUMP PATH FROM ENV
-            $command = env('MYSQLDUMP_PATH')." -h $database_host -u $database_user -p$database_pass $database_name -P 3306 > $file_path";
+            $command = env('MYSQLDUMP_PATH')." -h $database_host -u $database_user -p$database_pass $database_name > $file_path";
             \Log::info($command);
             exec($command);
             \App\Models\BackupModel::create([
@@ -64,7 +64,8 @@ class BackupController extends Controller
     
     //backup_cron
     public function _cronBackup(){
-        //Get list of all databases
+        //Get list of all databases which are due for backup and which are not yet backed up
+
         $database_storages = \DB::select('SELECT ds.*
         FROM database_storages ds
         LEFT JOIN (
