@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('backup_models', function (Blueprint $table) {
+        Schema::create('next_backup_models', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('database_id');
-            $table->string('file_path');
-            $table->string('backup_mode');
-            // $table->dateTime('next_backup_at')->nullable();
+            $table->string('database_id');
+            $table->datetime('next_backup_time');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('backup_models');
+        Schema::dropIfExists('next_backup_models');
     }
 };

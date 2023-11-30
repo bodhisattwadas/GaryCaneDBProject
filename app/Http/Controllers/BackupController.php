@@ -64,22 +64,11 @@ class BackupController extends Controller
     
     //backup_cron
     public function _cronBackup(){
-        //Get list of all databases which are due for backup and which are not yet backed up
-
-        $database_storages = \DB::select('SELECT ds.*
-        FROM database_storages ds
-        LEFT JOIN (
-            SELECT database_id, next_backup_at
-            FROM backup_models
-            WHERE backup_mode = \'cron\'
-            AND next_backup_at <= CURRENT_TIMESTAMP
-            AND next_backup_at IS NOT NULL
-        ) AS bm_cron ON ds.id = bm_cron.database_id
-        WHERE bm_cron.database_id IS NOT NULL
-        ORDER BY bm_cron.next_backup_at ASC
-        LIMIT ?;', [env('BACKUP_NUMBER', 5)]);   
-        //Iterate through each database and backup
-
+        // select all databases which are due for backup from nextBackUPModel limit by BACKUP_NUMBER less than current time
+        $database_ids = \App\Models\NextBackupModel::where('next_backup_time', '<=', date('Y-m-d H:i:s'))->limit(env('BACKUP_NUMBER', 5))->get();
+        //Get all database_storages for the above database_ids
+        $database_storages = \App\Models\DatabaseStorage::whereIn('id', $database_ids->pluck('database_id'))->get();
+        //loop through each database and backup
         foreach($database_storages as $database_storage){
             $database_host = $database_storage->database_host;
             $database_user = $database_storage->database_username;
@@ -102,16 +91,15 @@ class BackupController extends Controller
                 $command = env('MYSQLDUMP_PATH','mysqldump')." -h $database_host -u $database_user -p$database_pass $database_name > $file_path";
                 \Log::info($command);
                 exec($command);
-                //update all backups for this database to next backup time as NULL
-                \App\Models\BackupModel::where('database_id', $database_storage->id)->update([
-                    'next_backup_at' => NULL
+                //update next_backup_at
+                \App\Models\NextBackupModel::where('database_id', $database_storage->id)->update([
+                    'next_backup_time' => date('Y-m-d H:i:s', strtotime('+'.$database_backup_interval.' hour'))
                 ]);
                 //store backup in database
                 \App\Models\BackupModel::create([
                     'database_id' => $database_storage->id,
                     'file_path' => $file_path,
-                    'backup_mode' => 'cron',
-                    'next_backup_at' => date('Y-m-d H:i:s', strtotime('+'.$database_backup_interval.' hour'))
+                    'backup_mode' => 'cron'
                 ]);
                 \Log::debug($database_name." Database backed up successfully to the backups folder at : ".date('Y-m-d H:i:s'));
             }catch(\PDOException $e){

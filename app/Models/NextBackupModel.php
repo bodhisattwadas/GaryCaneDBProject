@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BackupModel extends Model
+class NextBackupModel extends Model
 {
     use HasFactory;
     protected $fillable = [
         'database_id',
-        'file_path',
-        'backup_mode',
-        // 'next_backup_at'
+        'next_backup_time',
     ];
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DatabaseStorage;
+use App\Models\NextBackupModel;
 use Illuminate\Http\Request;
 
 class DatabaseStorageController extends Controller
@@ -51,6 +52,14 @@ class DatabaseStorageController extends Controller
             'database_description' => $request->database_description,
             'database_backup_interval' => $request->database_backup_interval,
         ]);
+        //store next_backup_time
+        NextBackupModel::create([
+            //get id from last inserted database_storage
+            'database_id' => DatabaseStorage::latest()->first()->id,
+            //'database_id' => $request->database_id,
+            'next_backup_time' => date('Y-m-d H:i:s', strtotime('+ 5 minute')),
+        ]);
+        
 
         //redirect
         return redirect()->route('database_storage.index');
@@ -117,6 +126,8 @@ class DatabaseStorageController extends Controller
         $databaseStorage->delete();
         //delete backups
         \App\Models\BackupModel::where('database_id', $databaseStorage->id)->delete();
+        //delete next_backup_time
+        \App\Models\NextBackupModel::where('database_id', $databaseStorage->id)->delete();
         return redirect()->route('database_storage.index');
 
     }
